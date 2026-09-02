@@ -1,3 +1,4 @@
+```javascript
 import http from 'node:http'
 import { URL } from 'node:url';
 
@@ -73,6 +74,8 @@ const server = http.createServer((requisicao, resposta) => {
 
             } catch (error) {
 
+                // O tratamento de erro do JSON.parse está adequado. Ao enviar um corpo JSON malformado, o catch captura o erro e retorna o status 400 com a mensagem "Formato JSON inválido!", deixando claro para o cliente que o corpo da requisição está em um formato inválido.
+
                 resposta.statusCode = 400
                 resposta.end(JSON.stringify({
                     error: 'Formato JSON inválido!'
@@ -93,4 +96,6 @@ const server = http.createServer((requisicao, resposta) => {
 server.listen(porta, () => {
     console.log(`Servidor funcionando na porta ${porta}`)
 })
+```
+
 
