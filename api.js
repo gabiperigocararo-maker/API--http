@@ -93,3 +93,4 @@ const server = http.createServer((requisicao, resposta) => {
 server.listen(porta, () => {
     console.log(`Servidor funcionando na porta ${porta}`)
 })
+
